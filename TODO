@@ -1,0 +1,11 @@
+How to generate asm (.s) files
+
+gcc -S -Og <filename>
+
+
+N.B. When writing programs, make sure to write a basic file name (say, file1) and not something that's actually descriptive. 
+
+N.B. Maybe expand upon this by adding an additional txt file which describes the asm and add a method for deducing the code.
+    -> Perhaps add problem sheets in a similar vein to the Midterm?
+
+N.B. Put on github
