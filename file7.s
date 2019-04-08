@@ -3,62 +3,53 @@
 	.globl	f
 	.type	f, @function
 f:
-.LFB23:
-	.cfi_startproc
-	testl	%edi, %edi
-	jns	.L8
-	movl	$1, %eax
-	ret
-.L8:
 	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
+	movq	%rsp, %rbp
 	pushq	%rbx
-	.cfi_def_cfa_offset 24
-	.cfi_offset 3, -24
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 32
-	movl	%edi, %ebx
-	leal	-1(%rdi), %edi
+	subq	$24, %rsp
+	movl	%edi, -20(%rbp)
+	cmpl	$0, -20(%rbp)
+	jns	.L2
+	movl	$1, %eax
+	jmp	.L3
+.L2:
+	movl	-20(%rbp), %eax
+	subl	$1, %eax
+	movl	%eax, %edi
 	call	f
-	movl	%eax, %ebp
-	leal	-2(%rbx), %edi
+	movl	%eax, %ebx
+	movl	-20(%rbp), %eax
+	subl	$2, %eax
+	movl	%eax, %edi
 	call	f
-	addl	%ebp, %eax
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 24
+	addl	%ebx, %eax
+.L3:
+	addq	$24, %rsp
 	popq	%rbx
-	.cfi_def_cfa_offset 16
 	popq	%rbp
-	.cfi_def_cfa_offset 8
 	ret
-	.cfi_endproc
-.LFE23:
 	.size	f, .-f
-	.section	.rodata.str1.1,"aMS",@progbits,1
+	.section	.rodata
 .LC0:
 	.string	"%i\n"
 	.text
 	.globl	main
 	.type	main, @function
 main:
-.LFB24:
-	.cfi_startproc
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 16
-	movl	$5, %edi
+	pushq	%rbp
+	movq	%rsp, %rbp
+	subq	$16, %rsp
+	movl	$5, -4(%rbp)
+	movl	-4(%rbp), %eax
+	movl	%eax, %edi
 	call	f
-	movl	%eax, %edx
-	leaq	.LC0(%rip), %rsi
-	movl	$1, %edi
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rdi
 	movl	$0, %eax
-	call	__printf_chk@PLT
+	call	printf@PLT
 	movl	$0, %eax
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
+	leave
 	ret
-	.cfi_endproc
-.LFE24:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0"
 	.section	.note.GNU-stack,"",@progbits

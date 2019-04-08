@@ -1,4 +1,4 @@
-How to generate asm (.s) files
+How to generate asm (.s) files (what sort of fool doesn't use a makefile?)
 
 gcc -S -Og <filename>
 
