@@ -12,7 +12,7 @@ int g(int x){
 
 int f(int x){
 	int t = <?>*x;
-	return <t>;
+	return <?>;
 }
 
 int main(){
