@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+
+/*
+Fill out the missing pieces of code. i.e. everything in the <?> tags
+Check your answers with file3.c
+*/
+
 int g(int x){
 	return x + <?>;
 }
