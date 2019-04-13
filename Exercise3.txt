@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int g(int x){
+	return x + <?>;
+}
+
+int f(int x){
+	int t = <?>*x;
+	return <t>;
+}
+
+int main(){
+	int y = <?>;
+	printf("%i\n", <?>);
+}

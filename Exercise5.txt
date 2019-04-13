@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+/*
+Fill out the missing pieces of code. i.e. everything in the <?> tags
+Check your answers with file5.c
+*/
+
+int main(){
+	char* hello = <?>;
+	for (int i = <?>; i < 7; <?>)
+		printf("%c\n", <?>);
+}

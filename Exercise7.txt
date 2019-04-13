@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+/*
+Fill out the missing pieces of code. i.e. everything in the <?> tags
+Check your answers with file5.c
+*/
+
+int f(int n){
+	if (<?> < 0)
+		return <?>;
+	else
+		return <?> + f(<?>);
+}
+
+int main(){
+	int n = <?>;
+	printf("%i\n", f(n));
+}

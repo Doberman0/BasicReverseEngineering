@@ -1,0 +1,19 @@
+A basic exercise sheet for you to practice on
+
+Try to deduce the values inside the '< >' tags using just the assembly code/file4.s. You can check your answers with file4.c 
+
+char t = <some_val>;
+switch(t){
+	case <some_val>:
+		printf("Eat\n");
+		break;
+	case 28:
+		printf(" <Enter text> ");
+		break;
+	case <some_val>:
+		printf("shorts\n");
+	default:
+		printf(" <Enter text> ");
+}
+
+
